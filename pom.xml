@@ -21,7 +21,7 @@
         <version>1.5.4.RELEASE</version>
     </parent>
     <properties>
-        <docker.image.prefix>ag</docker.image.prefix>
+        <docker.image.prefix>sc</docker.image.prefix>
         <docker.plugin.version>0.4.13</docker.plugin.version>
         <mapper.version>3.4.0</mapper.version>
         <maven.compile.source>1.8</maven.compile.source>
@@ -43,8 +43,8 @@
     <packaging>pom</packaging>
     <developers>
         <developer>
-            <name>ace</name>
-            <email>463540703@qq.com</email>
+            <name>lovedrose</name>
+            <email>lovedrose@outlook.com</email>
         </developer>
     </developers>
     <dependencies>
@@ -82,6 +82,16 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
                 <version>1.0.11</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>2.8.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>2.8.2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

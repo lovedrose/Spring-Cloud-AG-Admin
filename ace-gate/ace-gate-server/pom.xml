@@ -85,6 +85,7 @@
             <artifactId>feign-jackson</artifactId>
             <version>8.18.0</version>
         </dependency>
+
     </dependencies>
     <build>
         <finalName>ace-gate</finalName>

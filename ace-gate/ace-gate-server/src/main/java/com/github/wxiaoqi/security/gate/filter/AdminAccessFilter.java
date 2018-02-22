@@ -1,6 +1,7 @@
 package com.github.wxiaoqi.security.gate.filter;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.github.wxiaoqi.security.api.vo.authority.PermissionInfo;
 import com.github.wxiaoqi.security.api.vo.log.LogInfo;
 import com.github.wxiaoqi.security.auth.client.config.ServiceAuthConfig;
@@ -19,6 +20,8 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
@@ -43,6 +46,9 @@ import java.util.stream.Stream;
 @Component
 @Slf4j
 public class AdminAccessFilter extends ZuulFilter {
+
+    Logger logger =(Logger) LogManager.getLogger(ZuulFilter.class.getName());
+
     @Autowired
     @Lazy
     private IUserService userService;
@@ -88,6 +94,10 @@ public class AdminAccessFilter extends ZuulFilter {
         HttpServletRequest request = ctx.getRequest();
         final String requestUri = request.getRequestURI().substring(zuulPrefix.length());
         final String method = request.getMethod();
+        logger.info(" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
+        logger.info("URI > " + requestUri);
+        logger.info("PARAMS > " + JSON.toJSONString(request.getParameterMap()));
+        logger.info(">>>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         BaseContextHandler.setToken(null);
         // 不进行拦截的地址
         if (isStartWith(requestUri)) {
