@@ -1,6 +1,7 @@
 # AG-Admin(`开源学习`）
 AG-Admin是国内首个基于`Spring Cloud`微`服务`化`开发平台`，具有统一授权、认证后台管理系统，其中包含具备用户管理、资源权限管理、网关API管理等多个模块，支持多业务系统并行开发，可以作为后端服务的开发脚手架。代码简洁，架构清晰，适合学习和直接项目中使用。核心技术采用Eureka、Fegin、Ribbon、Zuul、Hystrix、`JWT Token`、Mybatis等主要框架和中间件，前端采用`vue-element-admin`组件。 
 ### QQ群号：169824183
+### 更新日志，查看[点击打开](https://gitee.com/geek_qi/ace-security/blob/master/README.md#%E5%BC%80%E6%BA%90%E7%89%88%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97)
 
 # AG-Enterprise（`企业商用`）
 
@@ -13,8 +14,7 @@ AG-Admin是国内首个基于`Spring Cloud`微`服务`化`开发平台`，具有
 - 提供`分布式事务`解决方案和中间件，解决服务拆分后的事物控制问题;
 - 提供`服务运维`基础部署，监控服务的状态、服务的链路调用。
 
-### 第一批名额限制：200名，优惠价格：1680，`享终身授权特权`，私聊老A：463540703。
-- 终身授权说明：享有后续企业版的不断新增的功能。
+### 第一批名额限制：200名，优惠价格：1680，`享终身授权特权`，示例证书：[点击打开](http://geek_qi.gitee.io/ag-admin/img/demo.pdf)，私聊老A：463540703。
 
 功能清单 | 开源版 | 企业版
 ---|---|---
@@ -24,9 +24,9 @@ AG-Admin是国内首个基于`Spring Cloud`微`服务`化`开发平台`，具有
 权限管理|√|√
 操作日志|√|√
 数据字典|×|`√`
-服务运维监控| ×|`√`
+服务运维监控| √|`√`
 完整用户认证 | × | `√`
-服务管理模块|×|`√`
+服务管理模块|√|`√`
 分布式事务|×|`√`
 2.0UI|×|`√`
 完整开发文档|×|`√`
@@ -36,7 +36,7 @@ AG-Admin是国内首个基于`Spring Cloud`微`服务`化`开发平台`，具有
 多租户模块|×|`√`
 数据权限|×|`√`
 分级授权|x|`√`
-定时任务|×|设计开发中
+定时任务|×|`√`
 
 ## 超级管理员
 ![img](http://geek_qi.gitee.io/ag-admin/img/base.gif)
@@ -50,7 +50,17 @@ AG-Admin是国内首个基于`Spring Cloud`微`服务`化`开发平台`，具有
 ### 联系老A，`QQ：463540703`，`微信：whb2lyx`，进行企业版购买
 
 ----
+# 开源版更新日志
+### 2018.02.25
+- 增加服务管理模块
 
+![img](http://geek_qi.gitee.io/ag-admin/img/serviceManager.png)
+
+- 增加运维监控模块
+
+![img](http://geek_qi.gitee.io/ag-admin/img/zipkinManager.png)
+![img](http://geek_qi.gitee.io/ag-admin/img/eurekaManager.png)
+![img](http://geek_qi.gitee.io/ag-admin/img/monitorManager.png)
 
 # 模块说明
 ![image.png](http://upload-images.jianshu.io/upload_images/5700335-8d69f4e885a4ec85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
