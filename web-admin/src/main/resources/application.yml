@@ -31,15 +31,16 @@ spring:
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
     rabbitmq:
-        host: ${RABBIT_MQ_HOST:localhost}
-        port:  ${RABBIT_MQ_PORT:5672}
+        host: localhost # ${RABBIT_MQ_HOST:localhost}
+        port: 5672 #p ${RABBIT_MQ_PORT:5672}
         username: guest
         password: guest
     zipkin:
         enabled: true
-    sleuth:
-      sampler:
-        percentage: 1
+        base-url: http://localhost:9411
+    #sleuth:
+     # sampler:
+       # percentage: 1
 mybatis:
     basepackage: com.lovehins.web.admin.mapper
     xmlLocation: classpath:mapper/**/*.xml

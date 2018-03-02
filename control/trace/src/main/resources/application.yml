@@ -1,7 +1,7 @@
 spring:
   rabbitmq:
-    host: ${RABBIT_MQ_HOST:127.0.0.1}
-    port: ${RABBIT_MQ_PORT:5672}
+    host: localhost # ${RABBIT_MQ_HOST:127.0.0.1}
+    port: 5672 # ${RABBIT_MQ_PORT:5672}
     username: guest
     password: guest
   datasource:
@@ -17,6 +17,8 @@ spring:
    #表示当前程序不使用sleuth
   sleuth:
     enabled: false
+    sampler:
+      percentage: 0.5
    #表示zipkin数据存储方式是mysql
 zipkin:
   storage: typemysql

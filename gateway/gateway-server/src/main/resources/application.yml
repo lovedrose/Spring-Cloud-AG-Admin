@@ -14,15 +14,16 @@ spring:
         pool:
             max-active: 20
     rabbitmq:
-        host: ${RABBIT_MQ_HOST:localhost}
-        port:  ${RABBIT_MQ_PORT:5672}
+        host: localhost # ${RABBIT_MQ_HOST:localhost}
+        port: 5672 # ${RABBIT_MQ_PORT:5672}
         username: guest
         password: guest
     zipkin:
       enabled: true
-    sleuth:
-      sampler:
-        percentage: 1
+      base-url: http://localhost:9411
+    #sleuth:
+      #sampler:
+        #percentage: 1
 server:
     port: 8765 #启动端口
 #
