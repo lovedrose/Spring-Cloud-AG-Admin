@@ -1,7 +1,7 @@
 logging:
     level:
 #        tk.mybatis: DEBUG
-        com.github.wxiaoqi.security.admin: DEBUG
+        com.lovehins.web.admin: DEBUG
 spring:
     application:
         name: web-admin
