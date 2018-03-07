@@ -28,15 +28,15 @@
         <maven.compile.target>1.8</maven.compile.target>
     </properties>
     <modules>
-        <module>web-admin</module>
-        <module>register-center</module>
-        <module>gateway</module>
         <module>base-sdk</module>
+        <module>register-center</module>
         <module>config-center</module>
-        <module>generator</module>
         <module>authorization</module>
-        <module>sidecar</module>
+        <module>web-admin</module>
+        <module>gateway</module>
+        <module>generator</module>
         <module>control</module>
+        <module>sidecar</module>
     </modules>
     <packaging>pom</packaging>
     <developers>
