@@ -3,9 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
+<<<<<<< HEAD:gateway/ratelimit/pom.xml
         <artifactId>gateway</artifactId>
         <groupId>com.lovehins</groupId>
         <version>1.0-SNAPSHOT</version>
+=======
+        <artifactId>ace-gate</artifactId>
+        <groupId>com.github.wxiaoqi</groupId>
+        <version>2.0-SNAPSHOT</version>
+>>>>>>> upstream/master:ace-gate/ace-gate-ratelimit/pom.xml
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -25,7 +31,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zuul</artifactId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
             <scope>provided</scope>
             <optional>true</optional>
         </dependency>

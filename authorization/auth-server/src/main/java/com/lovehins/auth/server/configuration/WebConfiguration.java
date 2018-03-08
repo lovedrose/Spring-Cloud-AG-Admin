@@ -7,18 +7,21 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-
-import java.util.ArrayList;
-import java.util.Collections;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
+<<<<<<< HEAD:authorization/auth-server/src/main/java/com/lovehins/auth/server/configuration/WebConfiguration.java
  * Created by lovedrose
  * web 配置
+=======
+ *
+ * @author ace
+ * @date 2017/9/8
+>>>>>>> upstream/master:ace-auth/ace-auth-server/src/main/java/com/github/wxiaoqi/security/auth/configuration/WebConfiguration.java
  */
 @Configuration("admimWebConfig")
 @Primary
-public class WebConfiguration extends WebMvcConfigurerAdapter {
+public class WebConfiguration implements WebMvcConfigurer {
     @Bean
     GlobalExceptionHandler getGlobalExceptionHandler() {
         return new GlobalExceptionHandler();
@@ -26,10 +29,8 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        ArrayList<String> commonPathPatterns = getExcludeCommonPathPatterns();
-        registry.addInterceptor(getServiceAuthRestInterceptor()).addPathPatterns("/**").excludePathPatterns(commonPathPatterns.toArray(new String[]{}));
-        registry.addInterceptor(getUserAuthRestInterceptor()).addPathPatterns("/**").excludePathPatterns(commonPathPatterns.toArray(new String[]{}));
-        super.addInterceptors(registry);
+        registry.addInterceptor(getServiceAuthRestInterceptor()).addPathPatterns("/service/**");
+        registry.addInterceptor(getUserAuthRestInterceptor()).addPathPatterns("/service/**");
     }
 
     @Bean
@@ -42,16 +43,4 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
         return new UserAuthRestInterceptor();
     }
 
-
-    private ArrayList<String> getExcludeCommonPathPatterns() {
-        ArrayList<String> list = new ArrayList<>();
-        String[] urls = {
-                "/v2/api-docs",
-                "/swagger-resources/**",
-                "/client/**",
-                "/jwt/**"
-        };
-        Collections.addAll(list, urls);
-        return list;
-    }
 }

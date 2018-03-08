@@ -1,6 +1,7 @@
 
 package com.lovehins.auth.client.jwt;
 
+<<<<<<< HEAD:authorization/auth-client/src/main/java/com/lovehins/auth/client/jwt/ServiceAuthUtil.java
 import com.lovehins.auth.client.config.ServiceAuthConfig;
 import com.lovehins.auth.client.feign.ServiceAuthFeign;
 import com.lovehins.auth.common.event.AuthRemoteEvent;
@@ -9,6 +10,15 @@ import com.lovehins.auth.common.util.jwt.JWTHelper;
 import com.lovehins.base.sdk.exception.auth.ClientTokenException;
 import com.lovehins.base.sdk.msg.BaseResponse;
 import com.lovehins.base.sdk.msg.ObjectRestResponse;
+=======
+import com.github.wxiaoqi.security.auth.client.config.ServiceAuthConfig;
+import com.github.wxiaoqi.security.auth.client.feign.ServiceAuthFeign;
+import com.github.wxiaoqi.security.auth.common.util.jwt.IJWTInfo;
+import com.github.wxiaoqi.security.auth.common.util.jwt.JWTHelper;
+import com.github.wxiaoqi.security.common.exception.auth.ClientTokenException;
+import com.github.wxiaoqi.security.common.msg.BaseResponse;
+import com.github.wxiaoqi.security.common.msg.ObjectRestResponse;
+>>>>>>> upstream/master:ace-auth/ace-auth-client/src/main/java/com/github/wxiaoqi/security/auth/client/jwt/ServiceAuthUtil.java
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.SignatureException;
 import lombok.extern.slf4j.Slf4j;
@@ -27,11 +37,13 @@ import java.util.List;
 @Configuration
 @Slf4j
 @EnableScheduling
-public class ServiceAuthUtil  implements ApplicationListener<AuthRemoteEvent> {
+public class ServiceAuthUtil{
     @Autowired
     private ServiceAuthConfig serviceAuthConfig;
+
     @Autowired
     private ServiceAuthFeign serviceAuthFeign;
+
     private List<String> allowedClient;
     private String clientToken;
 
@@ -81,10 +93,5 @@ public class ServiceAuthUtil  implements ApplicationListener<AuthRemoteEvent> {
             this.refreshAllowedClient();
         }
         return allowedClient;
-    }
-
-    @Override
-    public void onApplicationEvent(AuthRemoteEvent authRemoteEvent) {
-        this.allowedClient = authRemoteEvent.getAllowedClient();
     }
 }

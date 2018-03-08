@@ -1,3 +1,4 @@
+<<<<<<< HEAD:gateway/gateway-server/src/main/resources/bootstrap.yml
 spring:
   cloud:
     config:
@@ -8,10 +9,13 @@ spring:
         name: gate
         profile: dev
 
+=======
+>>>>>>> upstream/master:ace-gate/ace-gate-server/src/main/resources/bootstrap.yml
 eureka:
     instance:
-        statusPageUrlPath: /info
-        healthCheckUrlPath: /health
+        statusPageUrlPath: /actuator/info
+        healthCheckUrlPath: /actuator/health
+        home-page-url-path: /
         # docker 部署开启
 #        prefer-ip-address: true
 #        ip-address: 127.0.0.1

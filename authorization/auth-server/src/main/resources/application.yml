@@ -37,12 +37,20 @@ spring:
       port: 5672  # ${RABBIT_MQ_PORT:5672}
       username: guest
       password: guest
+<<<<<<< HEAD:authorization/auth-server/src/main/resources/application.yml
     zipkin:
         enabled: true
         base-url: http://localhost:9411
     #sleuth:
         #sampler:
             #percentage: 1
+=======
+    sleuth:
+        sampler:
+            percentage: 1
+
+
+>>>>>>> upstream/master:ace-auth/ace-auth-server/src/main/resources/application.yml
 mybatis:
     basepackage: com.lovehins.auth.server.mapper
     xmlLocation: classpath:mapper/**/*.xml
@@ -81,8 +89,8 @@ hystrix:
 
 eureka:
     instance:
-        statusPageUrlPath: /info
-        healthCheckUrlPath: /health
+        statusPageUrlPath: /actuator/info
+        healthCheckUrlPath: /actuator/health
         # docker 部署开启
         prefer-ip-address: true
         ip-address: 127.0.0.1
@@ -96,12 +104,12 @@ eureka:
 
 jwt:
   token-header: Authorization
-  expire: 3600
+  expire: 14400
   rsa-secret: xx1WET12^%3^(WE45
 
 client:
   id: auth-server
   secret: M2I6Hqhn
   token-header: client-token
-  expire: 3600
+  expire: 14400
   rsa-secret: x2318^^(*WRYQWR(QW&T
