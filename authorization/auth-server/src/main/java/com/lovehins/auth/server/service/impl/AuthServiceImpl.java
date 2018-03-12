@@ -1,10 +1,10 @@
 package com.lovehins.auth.server.service.impl;
 
-import com.github.wxiaoqi.security.api.vo.user.UserInfo;
 import com.lovehins.auth.common.util.jwt.JWTInfo;
 import com.lovehins.auth.server.feign.IUserService;
 import com.lovehins.auth.server.service.AuthService;
 import com.lovehins.auth.server.util.user.JwtTokenUtil;
+import com.lovehins.base.sdk.vo.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;

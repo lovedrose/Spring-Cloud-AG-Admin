@@ -37,20 +37,13 @@ spring:
       port: 5672  # ${RABBIT_MQ_PORT:5672}
       username: guest
       password: guest
-<<<<<<< HEAD:authorization/auth-server/src/main/resources/application.yml
     zipkin:
         enabled: true
-        base-url: http://localhost:9411
-    #sleuth:
-        #sampler:
-            #percentage: 1
-=======
+#        base-url: http://localhost:9411
     sleuth:
         sampler:
             percentage: 1
 
-
->>>>>>> upstream/master:ace-auth/ace-auth-server/src/main/resources/application.yml
 mybatis:
     basepackage: com.lovehins.auth.server.mapper
     xmlLocation: classpath:mapper/**/*.xml

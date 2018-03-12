@@ -1,16 +1,4 @@
-<<<<<<< HEAD:gateway/gateway-server/src/main/resources/bootstrap.yml
-spring:
-  cloud:
-    config:
-        discovery:
-           service-id: config-center
-           enabled: true
-        label: master  # git 分支
-        name: gate
-        profile: dev
 
-=======
->>>>>>> upstream/master:ace-gate/ace-gate-server/src/main/resources/bootstrap.yml
 eureka:
     instance:
         statusPageUrlPath: /actuator/info

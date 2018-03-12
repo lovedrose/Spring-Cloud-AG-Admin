@@ -3,25 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-<<<<<<< HEAD:control/monitor/pom.xml
-        <artifactId>control</artifactId>
-        <groupId>com.lovehins</groupId>
-        <version>1.0-SNAPSHOT</version>
-=======
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.4.RELEASE</version>
->>>>>>> upstream/master:ace-control/ace-monitor/pom.xml
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
 
-<<<<<<< HEAD:control/monitor/pom.xml
     <artifactId>monitor</artifactId>
-=======
-    <artifactId>ace-monitor</artifactId>
-
->>>>>>> upstream/master:ace-control/ace-monitor/pom.xml
     <properties>
         <hystrix.version>1.5.12</hystrix.version>
         <boot.admin.version>1.5.3</boot.admin.version>
@@ -80,11 +69,10 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-<<<<<<< HEAD:control/monitor/pom.xml
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>${docker.plugin.version}</version>
+                <version>0.4.13</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -94,7 +82,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                    <!--<imageName>${docker.image.prefix}/${project.artifactId}</imageName>-->
+                    <imageName>sc/${project.artifactId}</imageName>
                     <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
                     <resources>
                         <resource>
@@ -105,32 +94,6 @@
                     </resources>
                 </configuration>
             </plugin>
-=======
-            <!--<plugin>-->
-            <!--<groupId>com.spotify</groupId>-->
-            <!--<artifactId>docker-maven-plugin</artifactId>-->
-            <!--<version>${docker.plugin.version}</version>-->
-            <!--<executions>-->
-            <!--<execution>-->
-            <!--<phase>package</phase>-->
-            <!--<goals>-->
-            <!--<goal>build</goal>-->
-            <!--</goals>-->
-            <!--</execution>-->
-            <!--</executions>-->
-            <!--<configuration>-->
-            <!--<imageName>${docker.image.prefix}/${project.artifactId}</imageName>-->
-            <!--<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>-->
-            <!--<resources>-->
-            <!--<resource>-->
-            <!--<targetPath>/</targetPath>-->
-            <!--<directory>${project.build.directory}</directory>-->
-            <!--<include>${project.build.finalName}.jar</include>-->
-            <!--</resource>-->
-            <!--</resources>-->
-            <!--</configuration>-->
-            <!--</plugin>-->
->>>>>>> upstream/master:ace-control/ace-monitor/pom.xml
         </plugins>
     </build>
     <dependencyManagement>

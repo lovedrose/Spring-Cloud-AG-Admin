@@ -1,16 +1,10 @@
 package com.lovehins.auth.client.interceptor;
 
-<<<<<<< HEAD:authorization/auth-client/src/main/java/com/lovehins/auth/client/interceptor/OkHttpTokenInterceptor.java
 import com.lovehins.auth.client.config.ServiceAuthConfig;
+import com.lovehins.auth.client.config.UserAuthConfig;
 import com.lovehins.auth.client.jwt.ServiceAuthUtil;
 import com.lovehins.base.sdk.constant.CommonConstants;
-=======
-import com.github.wxiaoqi.security.auth.client.config.ServiceAuthConfig;
-import com.github.wxiaoqi.security.auth.client.config.UserAuthConfig;
-import com.github.wxiaoqi.security.auth.client.jwt.ServiceAuthUtil;
-import com.github.wxiaoqi.security.common.constant.CommonConstants;
-import com.github.wxiaoqi.security.common.context.BaseContextHandler;
->>>>>>> upstream/master:ace-auth/ace-auth-client/src/main/java/com/github/wxiaoqi/security/auth/client/interceptor/OkHttpTokenInterceptor.java
+import com.lovehins.base.sdk.context.BaseContextHandler;
 import lombok.extern.java.Log;
 import okhttp3.Interceptor;
 import okhttp3.Request;

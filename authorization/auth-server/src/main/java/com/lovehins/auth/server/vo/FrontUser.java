@@ -1,6 +1,7 @@
 package com.lovehins.auth.server.vo;
 
-import com.github.wxiaoqi.security.api.vo.authority.PermissionInfo;
+
+import com.lovehins.base.sdk.vo.PermissionInfo;
 
 import java.util.List;
 

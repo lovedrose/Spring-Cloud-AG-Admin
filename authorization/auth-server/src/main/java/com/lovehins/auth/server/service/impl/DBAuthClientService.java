@@ -1,7 +1,5 @@
 package com.lovehins.auth.server.service.impl;
 
-<<<<<<< HEAD:authorization/auth-server/src/main/java/com/lovehins/auth/server/service/impl/DBAuthClientService.java
-import com.lovehins.auth.common.event.AuthRemoteEvent;
 import com.lovehins.auth.server.bean.ClientInfo;
 import com.lovehins.auth.server.entity.Client;
 import com.lovehins.auth.server.mapper.ClientMapper;
@@ -9,15 +7,6 @@ import com.lovehins.auth.server.service.AuthClientService;
 import com.lovehins.auth.server.util.client.ClientTokenUtil;
 import com.lovehins.base.sdk.exception.auth.ClientInvalidException;
 import com.lovehins.base.sdk.util.UUIDUtils;
-=======
-import com.github.wxiaoqi.security.auth.bean.ClientInfo;
-import com.github.wxiaoqi.security.auth.entity.Client;
-import com.github.wxiaoqi.security.auth.mapper.ClientMapper;
-import com.github.wxiaoqi.security.auth.service.AuthClientService;
-import com.github.wxiaoqi.security.auth.util.client.ClientTokenUtil;
-import com.github.wxiaoqi.security.common.exception.auth.ClientInvalidException;
-import com.github.wxiaoqi.security.common.util.UUIDUtils;
->>>>>>> upstream/master:ace-auth/ace-auth-server/src/main/java/com/github/wxiaoqi/security/auth/service/impl/DBAuthClientService.java
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.context.ApplicationContext;

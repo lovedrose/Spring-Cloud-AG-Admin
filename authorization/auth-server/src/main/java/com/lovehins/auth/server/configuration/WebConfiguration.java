@@ -10,14 +10,8 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
-<<<<<<< HEAD:authorization/auth-server/src/main/java/com/lovehins/auth/server/configuration/WebConfiguration.java
  * Created by lovedrose
  * web 配置
-=======
- *
- * @author ace
- * @date 2017/9/8
->>>>>>> upstream/master:ace-auth/ace-auth-server/src/main/java/com/github/wxiaoqi/security/auth/configuration/WebConfiguration.java
  */
 @Configuration("admimWebConfig")
 @Primary

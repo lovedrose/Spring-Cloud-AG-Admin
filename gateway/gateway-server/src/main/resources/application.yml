@@ -19,20 +19,14 @@ spring:
         port: 5672 # ${RABBIT_MQ_PORT:5672}
         username: guest
         password: guest
-<<<<<<< HEAD:gateway/gateway-server/src/main/resources/application.yml
-    zipkin:
-      enabled: true
-      base-url: http://localhost:9411
-    #sleuth:
-      #sampler:
-        #percentage: 1
-=======
+#    zipkin:
+#      enabled: true
+#      base-url: http://localhost:9411
     sleuth:
       sampler:
         percentage: 1
       zuul:
         enabled: true
->>>>>>> upstream/master:ace-gate/ace-gate-server/src/main/resources/application.yml
 server:
     port: 8765 #启动端口
 
@@ -103,10 +97,5 @@ auth:
     token-header: Authorization
   client:
     token-header: client-token
-<<<<<<< HEAD:gateway/gateway-server/src/main/resources/application.yml
     id: gateway-server  #不填则默认读取spring.application.name
     secret: JwuTekI9
-=======
-    id: ace-gate  #不填则默认读取spring.application.name
-    secret: 123456
->>>>>>> upstream/master:ace-gate/ace-gate-server/src/main/resources/application.yml
