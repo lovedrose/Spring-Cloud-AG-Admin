@@ -1,6 +1,6 @@
 spring:
     application:
-        name: ace-monitor
+        name: monitor
 
 server:
     port: 8764 #启动端口
