@@ -29,18 +29,18 @@
         <result column="attr8" jdbcType="VARCHAR" property="attr8"/>
     </resultMap>
     <select id="selectAuthorityElementByUserId" resultMap="BaseResultMap">
-    select distinct t.code,t.type,t.name,t.uri,t.method,m.title as menu_id from base_resource_authority ra
+        select distinct t.code,t.type,t.name,t.uri,t.method,m.title as menu_id from base_resource_authority ra
         inner join base_element t
-       on ra.resource_id = t.id
+        on ra.resource_id = t.id
         and ra.authority_id in (
-          select group_id from base_group_member where user_id = #{userId}
-          union select group_id from base_group_leader where user_id = #{userId}
+        select group_id from base_group_member where user_id = #{userId}
+        union select group_id from base_group_leader where user_id = #{userId}
         )
         and ra.authority_type = 'group'
         and ra.resource_type = 'button'
         inner join base_menu m
-       on t.menu_id = m.id
-  </select>
+        on t.menu_id = m.id
+    </select>
     <select id="selectAuthorityMenuElementByUserId" resultMap="BaseResultMap">
         select distinct t.* from base_resource_authority ra
         inner join base_element t
@@ -55,9 +55,9 @@
     </select>
     <select id="selectAuthorityElementByClientId" resultMap="BaseResultMap">
         select distinct t.* from auth_client_service cs
-         inner join base_element t
-         on t.id = cs.service_id
-         and cs.client_id = #{clientId}
+        inner join base_element t
+        on t.id = cs.service_id
+        and cs.client_id = #{clientId}
     </select>
     <select id="selectAllElementPermissions" resultMap="BaseResultMap">
         select distinct t.code,t.type,t.name,t.uri,t.method,m.title as menu_id from base_element t

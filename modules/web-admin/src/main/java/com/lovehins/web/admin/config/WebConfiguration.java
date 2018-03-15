@@ -25,11 +25,10 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        ArrayList<String> commonPathPatterns = getExcludeCommonPathPatterns();
-        registry.addInterceptor(getServiceAuthRestInterceptor()).addPathPatterns("/**").excludePathPatterns(commonPathPatterns.toArray(new String[]{}));
-        commonPathPatterns.add("/api/user/validate");
-        registry.addInterceptor(getUserAuthRestInterceptor()).addPathPatterns("/**").excludePathPatterns(commonPathPatterns.toArray(new String[]{}));
-        super.addInterceptors(registry);
+        registry.addInterceptor(getServiceAuthRestInterceptor()).
+                addPathPatterns(getIncludePathPatterns()).addPathPatterns("/api/user/validate");
+        registry.addInterceptor(getUserAuthRestInterceptor()).
+                addPathPatterns(getIncludePathPatterns());
     }
 
     @Bean
@@ -42,22 +41,23 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
         return new UserAuthRestInterceptor();
     }
 
-    private ArrayList<String> getExcludeCommonPathPatterns() {
+    /**
+     * 需要用户和服务认证判断的路径
+     * @return
+     */
+    private ArrayList<String> getIncludePathPatterns() {
         ArrayList<String> list = new ArrayList<>();
         String[] urls = {
-                "/v2/api-docs",
-                "/swagger-resources/**",
-                "/cache/**",
-                "/api/log/save"
+                "/element/**",
+                "/gateLog/**",
+                "/group/**",
+                "/groupType/**",
+                "/menu/**",
+                "/user/**",
+                "/api/permissions",
+                "/api/user/un/**"
         };
         Collections.addAll(list, urls);
         return list;
     }
-
-//    @Override
-//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler("/static/cache/**").addResourceLocations(
-//                "classpath:/META-INF/static/");
-//        super.addResourceHandlers(registry);
-//    }
 }

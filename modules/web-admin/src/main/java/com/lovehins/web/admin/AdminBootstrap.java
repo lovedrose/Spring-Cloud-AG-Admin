@@ -2,30 +2,32 @@ package com.lovehins.web.admin;
 
 import com.ace.cache.EnableAceCache;
 import com.lovehins.auth.client.EnableAuthClient;
+import com.spring4all.swagger.EnableSwagger2Doc;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * ${DESCRIPTION}
- *
  * Created by lovedrose
- * @create 2017-05-25 12:44
  */
+
+//@ServletComponentScan("com.lovehins.web.admin.config.druid")
+
 @EnableEurekaClient
 @EnableCircuitBreaker
 @SpringBootApplication
 @EnableFeignClients({"com.lovehins.auth.client.feign"})
 @EnableScheduling
 @EnableAuthClient
-@ServletComponentScan("com.lovehins.web.admin.config.druid")
 @EnableAceCache
 @EnableTransactionManagement
+@MapperScan("com.lovehins.web.admin.mapper")
+@EnableSwagger2Doc
 public class AdminBootstrap {
     public static void main(String[] args) {
         new SpringApplicationBuilder(AdminBootstrap.class).web(true).run(args);    }
