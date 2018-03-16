@@ -1,0 +1,30 @@
+                                    ********
+                                  **        **
+                                 *            *
+                                **            **
+                                **            **
+                                 **          **
+                                  **        **
+                                    ********
+                                      ****
+                                      ****
+        ****                          ****
+     ******                           ****                                 ***
+  ****************************************************************************
+    *******                           ****                                 ***
+        ****                          ****
+                                       **
+                                       **
+
+
+             *****      **     *****     ** **       **     **   **
+               **       **     **  *     ***         **     **** **
+              **        **     *****     ****        **     **  ***
+             ******     **     **        **  **      **     **   **
+
+:: Powered by Spring Boot ::         (v1.5.10.RELEASE)
+
+2018-03-15 17:11:06.508  INFO [/] 26511 --- [           main] zipkin.server.ZipkinServer               : Starting ZipkinServer on lovedroses-MacBook-Air.local with PID 26511 (/Users/lovedrose/Documents/Hins/Projects/sc/control/trace/zipkin.jar started by lovedrose in /Users/lovedrose/Documents/Hins/Projects/sc/control/trace)
+2018-03-15 17:11:06.515  INFO [/] 26511 --- [           main] zipkin.server.ZipkinServer               : The following profiles are active: shared
+2018-03-15 17:11:06.674  INFO [/] 26511 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@f6c48ac: startup date [Thu Mar 15 17:11:06 CST 2018]; root of context hierarchy
+2018-03-15 17:11:08.274  INFO [/] 26511 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'characterEncodingFilter' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration; factoryMethodName=characterEncodingFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/HttpEncodingAutoConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=zipkin.autoconfigure.ui.ZipkinUiAutoConfiguration; factoryMethodName=characterEncodingFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [zipkin/autoconfigure/ui/ZipkinUiAutoConfiguration.class]]

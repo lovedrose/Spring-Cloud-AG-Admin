@@ -1,58 +1,64 @@
 version: '2'
 services:
-  eureka:
-    image: ag/ace-center
+  register-center:
+    image: sc/register-center
+    container_name: register-center
     ports:
       - "8761:8761"
-  ace-auth:
-    image: ag/ace-auth
+  auth-server:
+    image: sc/auth-server
+    container_name: auth-server
     ports:
       - "9777:9777"
     depends_on:
-      - eureka
+      - register-center
     environment:
-      - EUREKA_HOST=eureka
+      - EUREKA_HOST=register-center
       - EUREKA_PORT=8761
       - REDIS_HOST=redis
       - REDIS_PORT=6379
-      - MYSQL_HOST=mysql
-      - MYSQL_PORT=3306
-      - RABBIT_MQ_HOST=rabbitmq
-      - RABBIT_MQ_HOST=5672
-  ace-admin:
-    image: ag/ace-admin
+#      - MYSQL_HOST=localhost
+#      - MYSQL_PORT=3306
+#      - RABBIT_MQ_HOST=rabbitmq
+#      - RABBIT_MQ_HOST=5672
+  web-admin:
+    image: sc/web-admin
+    container_name: web-admin
     ports:
       - "8762:8762"
     links:
-      - ace-auth
-    entrypoint: ./wait-for-it.sh ace-auth:9777 -t 600 --
+      - auth-server
+    entrypoint: ./wait-for-it.sh auth-server:9777 -t 100 --
     command: java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
     environment:
-      - EUREKA_HOST=eureka
+      - EUREKA_HOST=register-center
       - EUREKA_PORT=8761
       - REDIS_HOST=redis
       - REDIS_PORT=6379
-      - MYSQL_HOST=mysql
-      - MYSQL_PORT=3306
-      - RABBIT_MQ_HOST=rabbitmq
-      - RABBIT_MQ_HOST=5672
-  ace-gate:
-    image: ag/ace-gate
+#      - MYSQL_HOST=localhost
+#      - MYSQL_PORT=3306
+#      - RABBIT_MQ_HOST=rabbitmq
+#      - RABBIT_MQ_HOST=5672
+  gateway-server:
+    image: sc/gateway-server
+    container_name: gateway-server
     ports:
       - "8765:8765"
     links:
-      - ace-auth
-    entrypoint: ./wait-for-it.sh ace-auth:9777 -t 600 --
+      - auth-server
+    entrypoint: ./wait-for-it.sh ace-auth:9777 -t 100 --
     command: java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
     environment:
-      - EUREKA_HOST=eureka
+      - EUREKA_HOST=register-center
       - EUREKA_PORT=8761
-      - RABBIT_MQ_HOST=rabbitmq
-      - RABBIT_MQ_HOST=5672
+#      - RABBIT_MQ_HOST=rabbitmq
+#      - RABBIT_MQ_HOST=5672
   redis:
-    image: redis
-    restart: always
-    ports:
-      - "6379:6379"
-    volumes:
-      - ./.docker/redis:/var/lib/redis
+         image: redis
+         container_name: redis
+         restart: always
+         ports:
+           - "6379:6379"
+         volumes:
+           - ./.docker/redis:/var/lib/redis
+

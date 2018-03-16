@@ -24,7 +24,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableZuulProxy
 @EnableScheduling
 @EnableAuthClient
-@EnableGateRateLimit
+//@EnableGateRateLimit
 public class GateBootstrap {
     public static void main(String[] args) {
         DBLog.getInstance().start();

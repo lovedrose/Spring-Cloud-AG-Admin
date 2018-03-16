@@ -11,7 +11,7 @@ spring:
         default-property-inclusion: non_null
     datasource:
         name: test
-        url: jdbc:mysql://${MYSQL_HOST:192.168.99.1}:${MYSQL_PORT:3306}/ag_admin?useUnicode=true&characterEncoding=UTF8
+        url: jdbc:mysql://${MYSQL_HOST:192.168.1.149}:${MYSQL_PORT:3306}/ag_admin?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
         username: root
         password: love100200
         # 使用druid数据源
@@ -35,7 +35,7 @@ spring:
 #        port: ${RABBIT_MQ_PORT:5672}
 #        username: guest
 #        password: guest
-        host: 192.168.99.1
+        host: ${RABBIT_MQ_HOST:192.168.99.1}
         port: ${RABBIT_MQ_PORT:5672}
         username: lovedrose
         password: love100200
@@ -58,13 +58,13 @@ eureka:
         statusPageUrlPath: /info
         healthCheckUrlPath: /health
         # docker 部署开启
-        prefer-ip-address: true
-        ip-address: 192.168.99.100
+#        prefer-ip-address: true
+#        ip-address: 127.0.0.1
     client:
         serviceUrl:
 #            defaultZone: http://localhost:8761/eureka/
                     # docker 部署开启
-            defaultZone: http://${EUREKA_HOST:192.168.99.100}:${EUREKA_PORT:8761}/eureka/
+            defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/
 # 必须配置
 feign:
   httpclient:
@@ -117,7 +117,7 @@ redis:
          maxActive: 300
          maxIdle: 100
          maxWait: 1000
-    host: ${REDIS_HOST:192.168.99.1}
+    host: ${REDIS_HOST:localhost}
     port:  ${REDIS_PORT:6379}
     password:
     timeout: 2000

@@ -7,13 +7,13 @@ spring:
         default-property-inclusion: non_null
     redis:
         database: 1
-        host: ${REDIS_HOST:192.168.99.1}
+        host: ${REDIS_HOST:localhost}
         port: ${REDIS_PORT:6379}
         pool:
             max-active: 20
     datasource:
       name: test
-      url: jdbc:mysql://${MYSQL_HOST:192.168.99.1}:${MYSQL_PORT:3306}/ag_auth?useUnicode=true&characterEncoding=UTF8
+      url: jdbc:mysql://${MYSQL_HOST:192.168.1.149}:${MYSQL_PORT:3306}/ag_auth?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
       username: root
       password: love100200
       # 使用druid数据源
@@ -90,13 +90,13 @@ eureka:
         statusPageUrlPath: /actuator/info
         healthCheckUrlPath: /actuator/health
         # docker 部署开启
-        prefer-ip-address: true
-        ip-address: 192.168.99.100
+#        prefer-ip-address: true
+#        ip-address: 127.0.0.1
     client:
         serviceUrl:
 #            defaultZone: http://localhost:8761/eureka/
                     # docker 部署开启
-            defaultZone: http://${EUREKA_HOST:192.168.99.100}:${EUREKA_PORT:8761}/eureka/
+            defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/
 
 
 

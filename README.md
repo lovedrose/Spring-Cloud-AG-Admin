@@ -25,7 +25,7 @@ cd /usr/local/rabbitmq/sbin
 ```
 - 启动zipkin(readme)
 ```
-RABBIT_URI=amqp://guest:guest@localhost:5672  STORAGE_TYPE=mysql MYSQL_DB=ag_zipkin MYSQL_USER=root MYSQL_PASS=love100200 MYSQL_HOST=localhost MYSQL_USE_SSL=false nohup java -jar zipkin.jar > ~/Desktop/test.txt &
+RABBIT_URI=amqp://guest:guest@localhost:5672  STORAGE_TYPE=mysql MYSQL_DB=ag_zipkin MYSQL_USER=root MYSQL_PASS=love100200 MYSQL_HOST=localhost MYSQL_USE_SSL=false nohup java -jar zipkin.jar
 ```
 - 启动服务器（依次）
 
