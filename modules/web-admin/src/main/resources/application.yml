@@ -11,9 +11,12 @@ spring:
         default-property-inclusion: non_null
     datasource:
         name: test
-        url: jdbc:mysql://${MYSQL_HOST:192.168.1.149}:${MYSQL_PORT:3306}/ag_admin?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
+#        url: jdbc:mysql://${MYSQL_HOST:192.168.1.129}:${MYSQL_PORT:3306}/ag_admin?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
+#        username: root
+#        password: love100200
+        url: jdbc:mysql://gz-cdb-oamjd7cp.sql.tencentcdb.com:63242/ag_admin?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
         username: root
-        password: love100200
+        password: axJkamsUdvF3
         # 使用druid数据源
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
