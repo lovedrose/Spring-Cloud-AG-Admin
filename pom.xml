@@ -61,6 +61,9 @@
             <id>oss</id>
             <name>oss</name>
             <url>https://oss.sonatype.org/content/groups/public</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
         <repository>
             <id>spring-milestones</id>

@@ -13,7 +13,7 @@ spring:
             max-active: 20
     datasource:
       name: test
-#      url: jdbc:mysql://${MYSQL_HOST:192.168.1.129}:${MYSQL_PORT:3306}/ag_auth?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
+#      url: jdbc:mysql://${MYSQL_HOST:192.168.99.1}:${MYSQL_PORT:3306}/ag_auth?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
 #      username: root
 #      password: love100200
       url: jdbc:mysql://gz-cdb-oamjd7cp.sql.tencentcdb.com:63242/ag_admin?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
