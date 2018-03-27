@@ -11,10 +11,10 @@ spring:
     application:
         name: tool
     rabbitmq:
-      host: ${RABBIT_MQ_HOST:localhost}
-      port:  ${RABBIT_MQ_PORT:5672}
-      username: guest
-      password: guest
+      host: ${RABBIT_MQ_HOST:192.168.99.1}
+      port: ${RABBIT_MQ_PORT:5672}
+      username: lovedrose
+      password: love100200
     sleuth:
         sampler:
             percentage: 1

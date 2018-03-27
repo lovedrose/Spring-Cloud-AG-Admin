@@ -61,4 +61,14 @@ services:
            - "6379:6379"
          volumes:
            - ./.docker/redis:/var/lib/redis
+  tool:
+    image: sc/tool
+    container_name: tool
+    ports:
+      - "9992:9992"
+    depends_on:
+      - register-center
+    environment:
+      - EUREKA_HOST=register-center
+      - EUREKA_PORT=8761
 
