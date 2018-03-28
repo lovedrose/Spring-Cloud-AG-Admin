@@ -20,7 +20,7 @@ spring:
 #        username: guest
 #        password: guest
         # docker
-        host: ${RABBIT_MQ_HOST:192.168.99.1}
+        host: ${RABBIT_MQ_HOST:localhost}
         post: 5672
         username: lovedrose
         password: love100200

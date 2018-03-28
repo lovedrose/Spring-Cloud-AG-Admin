@@ -5,6 +5,14 @@ services:
     container_name: register-center
     ports:
       - "8761:8761"
+  rabbit:
+      container_name: rabbitmq
+      image: rabbitmq:management
+      ports:
+       - "4369:4369"
+       - "5671:5671"
+       - "5672:5672"
+       - "15672:15672"
   auth-server:
     image: sc/auth-server
     container_name: auth-server
