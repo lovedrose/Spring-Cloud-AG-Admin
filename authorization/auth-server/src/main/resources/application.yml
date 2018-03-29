@@ -10,7 +10,7 @@ spring:
         host: ${REDIS_HOST:localhost}
         port: ${REDIS_PORT:6379}
         pool:
-            max-active: 20
+        max-active: 20
     datasource:
       name: test
 #      url: jdbc:mysql://${MYSQL_HOST:192.168.99.1}:${MYSQL_PORT:3306}/ag_auth?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
@@ -114,3 +114,8 @@ client:
   token-header: client-token
   expire: 14400
   rsa-secret: x2318^^(*WRYQWR(QW&T
+
+logging:
+    level:
+#        tk.mybatis: DEBUG
+        com.github.wxiaoqi.security.auth: DEBUG

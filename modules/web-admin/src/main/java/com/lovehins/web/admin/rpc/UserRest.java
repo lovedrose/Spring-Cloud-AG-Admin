@@ -1,18 +1,19 @@
-package com.lovehins.web.admin.rpc;
+package com.github.wxiaoqi.security.admin.rpc;
 
 import com.ace.cache.annotation.Cache;
-import com.lovehins.base.sdk.vo.PermissionInfo;
-import com.lovehins.base.sdk.vo.UserInfo;
-import com.lovehins.web.admin.rpc.service.PermissionService;
+import com.github.wxiaoqi.security.admin.rpc.service.PermissionService;
+import com.github.wxiaoqi.security.api.vo.authority.PermissionInfo;
+import com.github.wxiaoqi.security.api.vo.user.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * ${DESCRIPTION}
  *
- * Created by lovedrose
+ * @author wanghaobin
  * @create 2017-06-21 8:15
  */
 @RestController
@@ -35,9 +36,8 @@ public class UserRest {
     }
 
     @RequestMapping(value = "/user/validate", method = RequestMethod.POST)
-    public @ResponseBody
-    UserInfo validate(String username, String password){
-        return permissionService.validate(username,password);
+    public @ResponseBody UserInfo validate(@RequestBody Map<String,String> body){
+        return permissionService.validate(body.get("username"),body.get("password"));
     }
 
 
