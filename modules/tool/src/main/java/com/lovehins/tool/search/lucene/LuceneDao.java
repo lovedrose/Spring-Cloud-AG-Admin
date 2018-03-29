@@ -154,8 +154,8 @@ public class LuceneDao {
             /*将上一页的最后一个document传递给searchAfter方法以得到下一页的结果 */
             TopDocs topDocs = indexSearcher.searchAfter(lastScoreDoc,query, pageSize);
 			Highlighter highlighter = this.addStringHighlighter(query);
-			log.info("搜索词语：{}",keyword);
-			log.info("总共的查询结果：{}", topDocs.totalHits);
+			log.info("Searching the Keyword is：{}",keyword);
+			log.info("Total Hits：{}", topDocs.totalHits);
 			for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
 			    int docID = scoreDoc.doc;
 			    float score = scoreDoc.score;
