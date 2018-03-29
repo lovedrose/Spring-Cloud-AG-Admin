@@ -1,18 +1,18 @@
 version: '2'
 services:
+  redis:
+    image: redis
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./.docker/redis:/var/lib/redis
   register-center:
     image: sc/register-center
     container_name: register-center
     ports:
       - "8761:8761"
-  rabbit:
-      container_name: rabbitmq
-      image: rabbitmq:management
-      ports:
-       - "4369:4369"
-       - "5671:5671"
-       - "5672:5672"
-       - "15672:15672"
   auth-server:
     image: sc/auth-server
     container_name: auth-server
@@ -61,14 +61,6 @@ services:
       - EUREKA_PORT=8761
 #      - RABBIT_MQ_HOST=rabbitmq
 #      - RABBIT_MQ_HOST=5672
-  redis:
-         image: redis
-         container_name: redis
-         restart: always
-         ports:
-           - "6379:6379"
-         volumes:
-           - ./.docker/redis:/var/lib/redis
   tool:
     image: sc/tool
     container_name: tool

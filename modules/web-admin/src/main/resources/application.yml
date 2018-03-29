@@ -38,7 +38,7 @@ spring:
 #        port: ${RABBIT_MQ_PORT:5672}
 #        username: guest
 #        password: guest
-        host: ${RABBIT_MQ_HOST:localhost}
+        host: ${RABBIT_MQ_HOST:172.17.0.1}
         port: ${RABBIT_MQ_PORT:5672}
         username: lovedrose
         password: love100200
