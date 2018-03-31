@@ -1,7 +1,7 @@
 package com.lovehins.auth.server.service;
 
 
-import com.github.wxiaoqi.security.auth.util.user.JwtAuthenticationRequest;
+import com.lovehins.auth.server.util.user.JwtAuthenticationRequest;
 
 public interface AuthService {
     String login(JwtAuthenticationRequest authenticationRequest) throws Exception;

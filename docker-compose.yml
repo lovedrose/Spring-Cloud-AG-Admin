@@ -1,18 +1,18 @@
 version: '2'
 services:
-  redis:
-    image: redis
-    container_name: redis
-    restart: always
-    ports:
-      - "6379:6379"
-    volumes:
-      - ./.docker/redis:/var/lib/redis
   register-center:
     image: sc/register-center
     container_name: register-center
     ports:
       - "8761:8761"
+  trace:
+    image: sc/trace
+    container_name: trace
+    ports:
+      - "9411:9411"
+    depends_on:
+      - register-center
+
   auth-server:
     image: sc/auth-server
     container_name: auth-server
@@ -36,7 +36,7 @@ services:
       - "8762:8762"
     links:
       - auth-server
-    entrypoint: ./wait-for-it.sh auth-server:9777 -t 100 --
+    entrypoint: ./wait-for-it.sh auth-server:9777 -t 600 --
     command: java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
     environment:
       - EUREKA_HOST=register-center
@@ -54,7 +54,7 @@ services:
       - "8765:8765"
     links:
       - auth-server
-    entrypoint: ./wait-for-it.sh ace-auth:9777 -t 100 --
+    entrypoint: ./wait-for-it.sh auth-server:9777 -t 600 --
     command: java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
     environment:
       - EUREKA_HOST=register-center
@@ -71,4 +71,12 @@ services:
     environment:
       - EUREKA_HOST=register-center
       - EUREKA_PORT=8761
+  redis:
+    image: redis
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./.docker/redis:/var/lib/redis
 

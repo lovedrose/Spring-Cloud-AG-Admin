@@ -36,12 +36,8 @@ spring:
       poolPreparedStatements: true
       maxOpenPreparedStatements: 20
     rabbitmq:
-#      host: ${RABBIT_MQ_HOST:localhost}
-#      port: ${RABBIT_MQ_PORT:5672}
-#      username: guest
-#      password: guest
-      # docker
       host: ${RABBIT_MQ_HOST:172.17.0.1}
+#      host: ${RABBIT_MQ_HOST:localhost}
       port: ${RABBIT_MQ_PORT:5672}
       username: lovedrose
       password: love100200
@@ -118,4 +114,4 @@ client:
 logging:
     level:
 #        tk.mybatis: DEBUG
-        com.github.wxiaoqi.security.auth: DEBUG
+        com.lovehin.auth.server: DEBUG

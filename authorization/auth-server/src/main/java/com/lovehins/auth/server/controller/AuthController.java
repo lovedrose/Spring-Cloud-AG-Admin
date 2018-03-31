@@ -1,8 +1,8 @@
-package com.github.wxiaoqi.security.auth.controller;
+package com.lovehins.auth.server.controller;
 
-import com.github.wxiaoqi.security.auth.service.AuthService;
-import com.github.wxiaoqi.security.auth.util.user.JwtAuthenticationRequest;
-import com.github.wxiaoqi.security.auth.util.user.JwtAuthenticationResponse;
+import com.lovehins.auth.server.service.AuthService;
+import com.lovehins.auth.server.util.user.JwtAuthenticationRequest;
+import com.lovehins.auth.server.util.user.JwtAuthenticationResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

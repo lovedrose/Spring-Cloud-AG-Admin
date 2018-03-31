@@ -1,9 +1,9 @@
-package com.github.wxiaoqi.security.admin.rpc;
+package com.lovehins.web.admin.rpc;
 
 import com.ace.cache.annotation.Cache;
-import com.github.wxiaoqi.security.admin.rpc.service.PermissionService;
-import com.github.wxiaoqi.security.api.vo.authority.PermissionInfo;
-import com.github.wxiaoqi.security.api.vo.user.UserInfo;
+import com.lovehins.base.sdk.vo.PermissionInfo;
+import com.lovehins.base.sdk.vo.UserInfo;
+import com.lovehins.web.admin.rpc.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,7 +36,8 @@ public class UserRest {
     }
 
     @RequestMapping(value = "/user/validate", method = RequestMethod.POST)
-    public @ResponseBody UserInfo validate(@RequestBody Map<String,String> body){
+    public @ResponseBody
+    UserInfo validate(@RequestBody Map<String,String> body){
         return permissionService.validate(body.get("username"),body.get("password"));
     }
 

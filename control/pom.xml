@@ -12,6 +12,7 @@
     <artifactId>control</artifactId>
     <modules>
         <module>monitor</module>
+        <module>trace</module>
     </modules>
 
 
