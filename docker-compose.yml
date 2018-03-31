@@ -25,10 +25,6 @@ services:
       - EUREKA_PORT=8761
       - REDIS_HOST=redis
       - REDIS_PORT=6379
-#      - MYSQL_HOST=localhost
-#      - MYSQL_PORT=3306
-#      - RABBIT_MQ_HOST=rabbitmq
-#      - RABBIT_MQ_HOST=5672
   web-admin:
     image: sc/web-admin
     container_name: web-admin
@@ -43,10 +39,6 @@ services:
       - EUREKA_PORT=8761
       - REDIS_HOST=redis
       - REDIS_PORT=6379
-#      - MYSQL_HOST=localhost
-#      - MYSQL_PORT=3306
-#      - RABBIT_MQ_HOST=rabbitmq
-#      - RABBIT_MQ_HOST=5672
   gateway-server:
     image: sc/gateway-server
     container_name: gateway-server
@@ -59,18 +51,16 @@ services:
     environment:
       - EUREKA_HOST=register-center
       - EUREKA_PORT=8761
-#      - RABBIT_MQ_HOST=rabbitmq
-#      - RABBIT_MQ_HOST=5672
-  tool:
-    image: sc/tool
-    container_name: tool
-    ports:
-      - "9992:9992"
-    depends_on:
-      - register-center
-    environment:
-      - EUREKA_HOST=register-center
-      - EUREKA_PORT=8761
+#  tool:
+#    image: sc/tool
+#    container_name: tool
+#    ports:
+#      - "9992:9992"
+#    depends_on:
+#      - register-center
+#    environment:
+#      - EUREKA_HOST=register-center
+#      - EUREKA_PORT=8761
   redis:
     image: redis
     container_name: redis
