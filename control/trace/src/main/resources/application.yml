@@ -18,8 +18,8 @@ zipkin:
     type: mysql
   collector:
     rabbitmq:
-      addresses: ${RABBIT_MQ_HOST:172.17.0.1}
-#      addresses: ${RABBIT_MQ_HOST:localhost}
+#      addresses: ${RABBIT_MQ_HOST:172.17.0.1}
+      addresses: ${RABBIT_MQ_HOST:localhost}
       port: ${RABBIT_MQ_PORT:5672}
       username: lovedrose
       password: love100200

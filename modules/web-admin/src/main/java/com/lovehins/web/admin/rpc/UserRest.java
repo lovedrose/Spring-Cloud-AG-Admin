@@ -1,8 +1,8 @@
 package com.lovehins.web.admin.rpc;
 
-import com.ace.cache.annotation.Cache;
 import com.lovehins.base.sdk.vo.PermissionInfo;
 import com.lovehins.base.sdk.vo.UserInfo;
+import com.lovehins.cache.annotation.Cache;
 import com.lovehins.web.admin.rpc.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

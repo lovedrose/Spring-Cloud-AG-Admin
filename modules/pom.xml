@@ -15,5 +15,6 @@
         <module>web-admin</module>
         <module>generator</module>
         <module>tool</module>
+        <module>cache</module>
     </modules>
 </project>

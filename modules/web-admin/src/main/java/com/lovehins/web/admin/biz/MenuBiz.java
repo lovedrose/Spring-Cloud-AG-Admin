@@ -1,8 +1,8 @@
 package com.lovehins.web.admin.biz;
 
-import com.ace.cache.annotation.Cache;
-import com.ace.cache.annotation.CacheClear;
 import com.lovehins.base.sdk.biz.BaseBiz;
+import com.lovehins.cache.annotation.Cache;
+import com.lovehins.cache.annotation.CacheClear;
 import com.lovehins.web.admin.constant.AdminCommonConstant;
 import com.lovehins.web.admin.entity.Menu;
 import com.lovehins.web.admin.mapper.MenuMapper;

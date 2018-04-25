@@ -29,7 +29,7 @@
             </logger> -->
 
         <!-- 没有指定输出级别的都是error（默认） -->
-        <root level="debug">
+        <root level="info">
             <appender-ref ref="log"/>
             <appender-ref ref="RollingFile"/>
             <appender-ref ref="Console"/>

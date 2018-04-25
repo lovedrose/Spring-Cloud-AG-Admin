@@ -7,21 +7,18 @@ server:
 
 # mysql
 spring:
-    datasource:
-        type: com.alibaba.druid.pool.DruidDataSource
-        driverClassName: com.mysql.jdbc.Driver
-#        url: jdbc:mysql://localhost:3306/ag_auth?useUnicode=true&characterEncoding=UTF-8
-#        username: root
-#        password: love100200
-      url: jdbc:mysql://gz-cdb-oamjd7cp.sql.tencentcdb.com:63242/ag_auth?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
-      username: root
-      password: axJkamsUdvF3
-    jackson:
-        time-zone: GMT+8
-        date-format: yyyy-MM-dd HH:mm:ss
-    thymeleaf:
-        mode: LEGACYHTML5
-        cache: false
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://gz-cdb-oamjd7cp.sql.tencentcdb.com:63242/ag_auth?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
+    username: root
+    password: axJkamsUdvF3
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
 
 # Mybatis配置
 mybatis:

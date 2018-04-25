@@ -1,7 +1,7 @@
 package com.lovehins.web.admin;
 
-import com.ace.cache.EnableAceCache;
 import com.lovehins.auth.client.EnableAuthClient;
+import com.lovehins.cache.EnableCache;
 import com.spring4all.swagger.EnableSwagger2Doc;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,7 +24,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableFeignClients({"com.lovehins.auth.client.feign"})
 @EnableScheduling
 @EnableAuthClient
-@EnableAceCache
+//@EnableAceCache
+@EnableCache
 @EnableTransactionManagement
 @MapperScan("com.lovehins.web.admin.mapper")
 @EnableSwagger2Doc
