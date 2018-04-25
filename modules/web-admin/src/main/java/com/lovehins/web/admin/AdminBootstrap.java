@@ -24,7 +24,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableFeignClients({"com.lovehins.auth.client.feign"})
 @EnableScheduling
 @EnableAuthClient
-//@EnableAceCache
 @EnableCache
 @EnableTransactionManagement
 @MapperScan("com.lovehins.web.admin.mapper")
