@@ -10,9 +10,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://gz-cdb-oamjd7cp.sql.tencentcdb.com:63242/ag_auth?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/ag_admin?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
     username: root
-    password: axJkamsUdvF3
+    password: love100200
   jackson:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss

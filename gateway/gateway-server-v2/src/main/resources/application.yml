@@ -39,8 +39,8 @@ spring:
         pool:
             max-active: 20
   rabbitmq:
-      host: ${RABBIT_MQ_HOST:172.17.0.1}
-#      host: ${RABBIT_MQ_HOST:localhost}
+#      host: ${RABBIT_MQ_HOST:172.17.0.1}
+      host: ${RABBIT_MQ_HOST:localhost}
       port:  ${RABBIT_MQ_PORT:5672}
       username: lovedrose
       password: love100200

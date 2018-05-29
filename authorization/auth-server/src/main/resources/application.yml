@@ -13,12 +13,12 @@ spring:
         max-active: 20
     datasource:
       name: test
-#      url: jdbc:mysql://${MYSQL_HOST:192.168.99.1}:${MYSQL_PORT:3306}/ag_auth?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
-#      username: root
-#      password: love100200
-      url: jdbc:mysql://gz-cdb-oamjd7cp.sql.tencentcdb.com:63242/ag_auth?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
+      url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/ag_auth?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
       username: root
-      password: axJkamsUdvF3
+      password: love100200
+#      url: jdbc:mysql://gz-cdb-oamjd7cp.sql.tencentcdb.com:63242/ag_auth?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
+#      username: root
+#      password: axJkamsUdvF3
       # 使用druid数据源
       type: com.alibaba.druid.pool.DruidDataSource
       driver-class-name: com.mysql.jdbc.Driver

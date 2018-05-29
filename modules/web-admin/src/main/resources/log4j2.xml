@@ -4,12 +4,12 @@
         <!-- 在控制台上打印输出 -->
         <Console name="Console" target="SYSTEM_OUT">
             <!-- 控制台上只输出level及以上级别的信息，其他的拒绝 -->
-            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY" />
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY" />
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %class{36} line:%L %M - %msg%xEx%n"/>
         </Console>
 
         <!-- 将信息输出到文件上，这个log日志会自动清空（由append属性决定 ）-->
-        <File name="log" fileName="log/log.log" append="false">
+        <File name="log" fileName="log/web-admin.log" append="false">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} line:%L %M - %msg%xEx%n" />
         </File>
 

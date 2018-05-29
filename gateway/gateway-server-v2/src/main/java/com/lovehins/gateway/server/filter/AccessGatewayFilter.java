@@ -40,6 +40,7 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -53,6 +54,7 @@ import java.util.stream.Stream;
  */
 @Configuration
 @Slf4j
+@SuppressWarnings("ALL")
 public class AccessGatewayFilter implements GlobalFilter {
     @Autowired
     @Lazy
@@ -86,6 +88,11 @@ public class AccessGatewayFilter implements GlobalFilter {
         final String method = request.getMethod().toString();
         BaseContextHandler.setToken(null);
         ServerHttpRequest.Builder mutate = request.mutate();
+
+        // 输出路由、参数
+        Map params = request.getQueryParams();
+        log.info("####### {} - {} >> {}", method, requestUri, JSON.toJSONString(params));
+
         // 不进行拦截的地址
         if (isStartWith(requestUri)) {
             ServerHttpRequest build = mutate.build();

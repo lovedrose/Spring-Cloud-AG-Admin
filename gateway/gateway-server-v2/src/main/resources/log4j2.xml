@@ -9,7 +9,7 @@
         </Console>
 
         <!-- 将信息输出到文件上，这个log日志会自动清空（由append属性决定 ）-->
-        <File name="log" fileName="log/log.log" append="false">
+        <File name="log" fileName="log/gateway.log" append="false">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} line:%L %M - %msg%xEx%n" />
         </File>
 
