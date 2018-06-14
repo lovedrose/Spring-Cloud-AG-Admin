@@ -11,7 +11,7 @@ spring:
         default-property-inclusion: non_null
     datasource:
         name: test
-        url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/ag_admin?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
+        url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/sc_admin?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
         username: root
         password: love100200
 #        url: jdbc:mysql://gz-cdb-oamjd7cp.sql.tencentcdb.com:63242/ag_admin?useUnicode=true&characterEncoding=UTF8&autoReconnect=true
